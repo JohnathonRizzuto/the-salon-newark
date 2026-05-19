@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Salon — Hair, Color &amp; Highlights in Newark, IL</title>
+<meta name="description" content="Boutique salon at 2 E Front St in Newark, IL. Color, highlights, cuts for men, women, and kids. Book online or call (815) 786-5225.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8F3EB;
+  --surface:#FFFFFF;
+  --surface-2:#EFE6D6;
+  --primary:#152238;
+  --primary-soft:#2A3A56;
+  --text:#152238;
+  --muted:#586780;
+  --border:rgba(21,34,56,0.12);
+  --accent:#B07C3E;
+  --accent-hover:#8E6230;
+  --gold:#C49A5C;
+  --champagne:#E6D2A8;
+  --overlay:rgba(21,34,56,0.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  font-size:1.04rem;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 8% 18%, rgba(176,124,62,0.05) 0%, transparent 55%),
+    radial-gradient(circle at 92% 65%, rgba(21,34,56,0.04) 0%, transparent 55%);
+}
+img{max-width:100%;display:block}
+.container{max-width:1240px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-0.02em;color:var(--primary);line-height:1.18}
+h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:500}
+h2{font-size:clamp(2rem,3.6vw,3.3rem)}
+h3{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500}
+p{color:var(--muted)}
+a{color:inherit;text-decoration:none}
+.italic{font-style:italic}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.2rem 0;
+  transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
+  background:rgba(248,243,235,0.55);
+  backdrop-filter:blur(6px);
+}
+header.scrolled{
+  background:rgba(248,243,235,0.94);
+  backdrop-filter:blur(14px) saturate(180%);
+  padding:0.75rem 0;
+  border-bottom:1px solid var(--border);
+  box-shadow:0 4px 24px rgba(21,34,56,0.06);
+}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.logo{font-family:'Playfair Display',serif;font-weight:500;font-size:1.55rem;color:var(--primary);letter-spacing:-0.02em;display:flex;align-items:center;gap:.7rem}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:var(--primary);display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:1.15rem}
+.logo .italic{font-style:italic;color:var(--accent)}
+.nav-links{display:flex;gap:2.2rem;align-items:center}
+.nav-links a{font-size:.95rem;font-weight:400;color:var(--primary);position:relative;padding:.25rem 0;letter-spacing:.02em}
+.nav-links a::after{content:'';position:absolute;left:50%;bottom:-2px;height:1px;width:0;background:var(--accent);transition:all .3s ease;transform:translateX(-50%)}
+.nav-links a:hover::after{width:100%}
+.socials-row{display:flex;gap:.5rem;align-items:center}
+.socials-row a{width:34px;height:34px;border-radius:50%;background:var(--surface-2);display:inline-flex;align-items:center;justify-content:center;transition:all .25s ease}
+.socials-row a:hover{background:var(--primary);transform:translateY(-2px)}
+.socials-row a:hover svg{stroke:var(--gold)}
+.socials-row svg{width:16px;height:16px;stroke:var(--primary);fill:none;stroke-width:1.6}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--accent);color:var(--surface);
+  font-family:'Outfit',sans-serif;font-weight:500;font-size:.95rem;letter-spacing:.02em;
+  padding:.85rem 1.7rem;border-radius:9999px;border:none;cursor:pointer;
+  transition:all .3s ease;box-shadow:0 6px 18px rgba(176,124,62,0.32);
+  animation:pulse 2.6s ease-in-out infinite;
+}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 28px rgba(176,124,62,0.4)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 6px 18px rgba(176,124,62,0.32),0 0 0 0 rgba(176,124,62,0.4)}
+  70%{box-shadow:0 6px 18px rgba(176,124,62,0.32),0 0 0 14px rgba(176,124,62,0)}
+}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:transparent;color:var(--primary);
+  font-family:'Outfit',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.02em;
+  padding:.8rem 1.5rem;border-radius:9999px;border:1px solid var(--border);
+  transition:all .25s ease;
+}
+.btn-outline:hover{border-color:var(--primary);background:var(--surface)}
+.hamburger{display:none;background:none;border:none;color:var(--primary);font-size:1.4rem;cursor:pointer}
+
+/* Hero - split layout */
+.hero{
+  min-height:100vh;
+  padding-top:8rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  position:relative;
+  overflow:hidden;
+}
+.hero-content{padding:4rem 4rem 4rem 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:640px;margin-left:auto}
+.hero-eyebrow{
+  font-family:'Playfair Display',serif;font-style:italic;font-size:.98rem;color:var(--accent);
+  letter-spacing:.04em;margin-bottom:1.4rem;
+  display:flex;align-items:center;gap:.8rem;
+  opacity:0;transform:translateY(16px);animation:fadeUp .8s ease forwards;animation-delay:.1s;
+}
+.hero-eyebrow::before{content:'';width:48px;height:1px;background:var(--accent)}
+.hero h1{margin-bottom:1.5rem;opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards;animation-delay:.25s}
+.hero h1 .italic{font-style:italic;color:var(--accent)}
+.hero-subtitle{font-size:1.2rem;color:var(--muted);margin-bottom:2.4rem;line-height:1.6;opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards;animation-delay:.4s}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem;opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards;animation-delay:.55s}
+.btn-hero{padding:1.1rem 2.1rem;font-size:1rem}
+.hero-stats{display:flex;gap:2.4rem;opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards;animation-delay:.7s}
+.hero-stats .stat-num{font-family:'Playfair Display',serif;font-weight:500;font-size:1.9rem;color:var(--primary);display:block;line-height:1}
+.hero-stats .stat-lbl{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-top:.4rem}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.hero-image{position:relative;overflow:hidden}
+.hero-image img{
+  width:100%;height:100%;object-fit:cover;
+  filter:contrast(1.05) saturate(1.05) brightness(0.97);
+}
+.hero-image::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(21,34,56,0.18) 0%,transparent 60%);
+}
+.hero-badge{
+  position:absolute;bottom:2rem;left:2rem;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);
+  padding:1.2rem 1.5rem;border-radius:14px;
+  display:flex;align-items:center;gap:1rem;
+  box-shadow:0 12px 32px rgba(21,34,56,0.18);
+  max-width:300px;
+}
+.hero-badge-icon{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:500;font-size:1.3rem;font-style:italic;flex-shrink:0}
+.hero-badge-text{font-size:.86rem;color:var(--primary)}
+.hero-badge-text strong{display:block;font-weight:600;margin-bottom:.1rem;font-size:.95rem;color:var(--primary)}
+
+/* Sections */
+section{padding:clamp(5rem,9vw,8rem) 0;position:relative}
+.section-eyebrow{
+  font-family:'Playfair Display',serif;font-style:italic;font-size:.98rem;color:var(--accent);
+  letter-spacing:.04em;margin-bottom:.9rem;display:inline-block;
+}
+.section-head{margin-bottom:3.5rem;max-width:720px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head p{margin-top:1rem;font-size:1.08rem;line-height:1.7}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;position:relative}
+.about-imgs img{border-radius:8px;width:100%;object-fit:cover;filter:contrast(1.05) saturate(0.95)}
+.about-imgs img:first-child{aspect-ratio:3/4;margin-top:2rem}
+.about-imgs img:last-child{aspect-ratio:3/4;margin-bottom:2rem}
+.about-imgs::before{
+  content:'';position:absolute;top:-25px;left:-25px;width:80px;height:80px;
+  border-top:2px solid var(--accent);border-left:2px solid var(--accent);z-index:-1;
+}
+.about-imgs::after{
+  content:'';position:absolute;bottom:-25px;right:-25px;width:80px;height:80px;
+  border-bottom:2px solid var(--accent);border-right:2px solid var(--accent);z-index:-1;
+}
+.about-text p{margin-bottom:1.2rem;color:var(--primary-soft);font-size:1.07rem;line-height:1.75}
+
+/* Services */
+.services{background:linear-gradient(180deg,var(--surface-2) 0%,var(--bg) 100%);position:relative}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{
+  background:var(--surface);border-radius:14px;padding:2.2rem 1.8rem;
+  border:1px solid var(--border);
+  transition:all .4s cubic-bezier(0.16,1,0.3,1);
+  position:relative;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 1px 3px rgba(21,34,56,0.06),0 20px 50px rgba(21,34,56,0.12);border-color:var(--accent)}
+.service-icon{width:54px;height:54px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:var(--accent);font-size:1.4rem}
+.service-card h3{margin-bottom:.55rem;font-size:1.3rem}
+.service-card p{font-size:.95rem;line-height:1.6;margin-bottom:1.3rem}
+.service-price-row{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;border-top:1px solid var(--border)}
+.service-price-row .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.service-price-row .price{font-family:'Playfair Display',serif;font-weight:500;font-size:1.4rem;color:var(--accent)}
+.service-foot{margin-top:2rem;text-align:center;font-size:.92rem;color:var(--muted);font-style:italic;font-family:'Playfair Display',serif}
+
+/* Gallery strip */
+.gallery{padding:0;background:var(--primary)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.gallery-grid img{aspect-ratio:1/1;object-fit:cover;width:100%;filter:contrast(1.05) saturate(0.9) brightness(0.95);transition:all .5s ease}
+.gallery-grid img:hover{transform:scale(1.04);filter:contrast(1.1) saturate(1.05) brightness(1)}
+
+/* Hours */
+.hours-section{background:var(--primary);color:var(--surface);position:relative;overflow:hidden}
+.hours-section::before{
+  content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(176,124,62,0.15) 0%,transparent 65%);
+}
+.hours-section h2{color:var(--surface)}
+.hours-section .section-eyebrow{color:var(--gold)}
+.hours-section .section-head p{color:rgba(255,255,255,0.7)}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.hours-list{display:flex;flex-direction:column;gap:.6rem}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:.95rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:1.04rem}
+.hours-day{color:var(--surface);font-weight:500}
+.hours-time{color:rgba(255,255,255,0.7);font-family:'Outfit',sans-serif}
+.hours-time.closed{color:var(--gold);font-style:italic;font-family:'Playfair Display',serif}
+.hours-cta{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:2.5rem;backdrop-filter:blur(8px)}
+.hours-cta h3{color:var(--surface);margin-bottom:.7rem}
+.hours-cta p{color:rgba(255,255,255,0.7);margin-bottom:1.6rem;font-size:.96rem}
+
+/* Map */
+.visit-section{padding-bottom:0}
+.visit-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:0;border-radius:18px;overflow:hidden;box-shadow:0 1px 3px rgba(21,34,56,0.06),0 22px 50px rgba(21,34,56,0.1)}
+.visit-info{background:var(--surface);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.visit-info h2{margin-bottom:1.4rem}
+.info-row{display:flex;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid var(--border)}
+.info-row:last-of-type{border-bottom:none}
+.info-icon{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);font-size:1.1rem}
+.info-text strong{display:block;font-weight:500;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.18rem}
+.info-text span,.info-text a{color:var(--primary);font-size:1rem;font-weight:400}
+.info-text a:hover{color:var(--accent)}
+.map-frame{position:relative;min-height:520px}
+.map-frame iframe{width:100%;height:100%;border:none;display:block}
+
+/* Final CTA */
+.final-cta{
+  background:linear-gradient(135deg,var(--primary) 0%,var(--primary-soft) 100%);
+  color:var(--surface);text-align:center;position:relative;overflow:hidden;
+}
+.final-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 25% 50%,rgba(176,124,62,0.18) 0%,transparent 50%);
+}
+.final-cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.final-cta .section-eyebrow{color:var(--gold)}
+.final-cta h2{color:var(--surface);margin-bottom:1.1rem}
+.final-cta h2 .italic{font-style:italic;color:var(--gold)}
+.final-cta p{color:rgba(255,255,255,0.78);font-size:1.15rem;margin-bottom:2.2rem}
+.final-cta .btn-primary{background:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,0.25);padding:1.15rem 2.5rem}
+
+/* Footer */
+footer{background:#0D1626;color:rgba(255,255,255,0.65);padding:4.5rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-col h4{color:var(--surface);font-family:'Playfair Display',serif;font-weight:500;font-size:1.15rem;margin-bottom:1.2rem}
+.footer-col p,.footer-col li{font-size:.93rem;line-height:1.85;color:rgba(255,255,255,0.6)}
+.footer-col li{list-style:none}
+.footer-col a:hover{color:var(--gold)}
+.footer-brand .logo{color:var(--surface);margin-bottom:1rem}
+.footer-brand p{max-width:280px;margin-bottom:1.4rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;font-size:.82rem;color:rgba(255,255,255,0.5)}
+.footer-bottom a{color:rgba(255,255,255,0.7)}
+.footer-bottom a:hover{color:var(--gold)}
+.footer-socials{display:flex;gap:.6rem;margin-top:.8rem}
+.footer-socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);display:inline-flex;align-items:center;justify-content:center;transition:all .25s}
+.footer-socials a:hover{background:var(--accent);transform:translateY(-2px)}
+.footer-socials svg{width:16px;height:16px;stroke:rgba(255,255,255,0.7);fill:none;stroke-width:1.6}
+.footer-socials a:hover svg{stroke:var(--surface)}
+
+/* Sticky mobile CTA */
+.sticky-cta{
+  display:none;position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:99;
+  background:var(--accent);color:var(--surface);
+  padding:1rem 1.4rem;border-radius:14px;
+  align-items:center;justify-content:space-between;gap:1rem;
+  box-shadow:0 12px 32px rgba(176,124,62,0.4);
+  font-family:'Outfit',sans-serif;font-weight:500;font-size:1rem;
+}
+.sticky-cta::after{content:'\2192';margin-left:auto}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(0.16,1,0.3,1)}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media(max-width:920px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:6rem}
+  .hero-content{padding:2rem 1.5rem 2.5rem;max-width:none;margin:0 auto}
+  .hero-image{order:-1;height:50vh}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .hours-grid{grid-template-columns:1fr;gap:2.5rem}
+  .visit-grid{grid-template-columns:1fr}
+  .visit-info{padding:2.5rem 1.8rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sticky-cta{display:flex}
+}
+@media(max-width:540px){
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.4rem}
+  .hero-stats .stat-num{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo"><span class="logo-mark">S</span>The <span class="italic">Salon</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#hours">Hours</a>
+        <a href="#visit">Visit</a>
+        <div class="socials-row">
+          <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2" target="_blank" rel="noopener" aria-label="Fresha booking">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </a>
+        </div>
+        <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="btn-primary">Book Now</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">A boutique salon on Front Street</div>
+    <h1>Hair you actually want to <span class="italic">show off.</span></h1>
+    <p class="hero-subtitle">Color, highlights, cuts for men, women, and kids &mdash; in a one-room salon where the appointment is yours, not split between four other chairs. Book online any time of night.</p>
+    <div class="hero-ctas">
+      <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="btn-primary btn-hero">Book Now &#8594;</a>
+      <a href="tel:8157865225" class="btn-outline">Or call (815) 786-5225</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-num">1:1</span><span class="stat-lbl">Stylist Time</span></div>
+      <div><span class="stat-num">All Ages</span><span class="stat-lbl">Men &middot; Women &middot; Kids</span></div>
+      <div><span class="stat-num">24/7</span><span class="stat-lbl">Online Booking</span></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <!-- REPLACE WITH REAL PHOTO of the salon interior, stylist working, or a finished cut/color -->
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80" alt="Salon interior with stylist's chair">
+    <div class="hero-badge">
+      <div class="hero-badge-icon">F</div>
+      <div class="hero-badge-text"><strong>Book on Fresha</strong>See real-time availability</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imgs reveal">
+        <!-- REPLACE WITH REAL PHOTO of the stylist or finished looks -->
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Stylist applying color">
+        <!-- REPLACE WITH REAL PHOTO of a happy client or detail shot -->
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80" alt="Client with finished color">
+      </div>
+      <div class="about-text reveal">
+        <span class="section-eyebrow">About the salon</span>
+        <h2>One chair. Your time. No overbooking.</h2>
+        <p>The Salon is a small, single-stylist studio in downtown Newark. The whole point: the hour you book is the hour you get. No double-stacked appointments, no rushed blowouts, no being passed off to whoever is free.</p>
+        <p>The work runs the full range &mdash; balayage, dimensional color, fashion shades, gloss treatments, men's tapers, kids' first haircuts, brow waxing, and deep conditioning. Color consults are always free.</p>
+        <p>Booked through Fresha so you can see the real schedule and grab a slot without a phone tag chain. If you're a first-timer, mention it in the booking notes &mdash; a quick chat before the appointment makes the result better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head center reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="section-eyebrow">What we do</span>
+      <h2>Services &amp; pricing.</h2>
+      <p>Starting prices below. Long, thick, or color-treated hair can run higher &mdash; consultations are free and we'll quote before any work begins.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">C</div>
+        <h3>Cuts</h3>
+        <p>Women's cut and style, men's tapers and beards, kids' first haircuts. A shampoo and finish blow-out is included on every adult cut.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$35 &#10038;</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">H</div>
+        <h3>Highlights &amp; Balayage</h3>
+        <p>Foil highlights, partial or full balayage, root smudges, and lived-in color that grows out without a hard line.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$110 &#10038;</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">G</div>
+        <h3>All-Over Color</h3>
+        <p>Single-process color, gray coverage, fashion shades, and gloss refreshers. We tone every color service before you leave.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$85 &#10038;</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">D</div>
+        <h3>Deep Conditioning</h3>
+        <p>K18, Olaplex, and bond-repair treatments. Add on to any service or book a standalone &mdash; great between color appointments.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$25 &#10038;</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">W</div>
+        <h3>Brow &amp; Lip Wax</h3>
+        <p>Quick brow shaping and lip waxes. Five-minute add-ons that finish a look. Same-day walk-ins welcome if there's an open slot.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$15 &#10038;</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">K</div>
+        <h3>Kids' Cuts</h3>
+        <p>Under 10. We bring the booster seat, the kid-safe scissors, and the patience for a wiggly first haircut.</p>
+        <div class="service-price-row"><span class="label">Starting at</span><span class="price">$22 &#10038;</span></div>
+      </div>
+    </div>
+    <p class="service-foot">&#10038; Prices shown are placeholders &mdash; confirm with owner before launch.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <!-- REPLACE WITH REAL PHOTOS of finished work from the salon -->
+    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="Color work">
+    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Hair cut">
+    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Balayage">
+    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" alt="Styling">
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours-section" id="hours">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">When we're open</span>
+      <h2>Hours.</h2>
+      <p>Open evenings and weekends so you can come in after work without rearranging your day.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-list reveal">
+        <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">4:00 PM &mdash; 9:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time closed">Closed</span></div>
+        <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">11:30 AM &mdash; 6:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">11:30 AM &mdash; 9:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time closed">Closed</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">11:00 AM &mdash; 6:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">11:00 AM &mdash; 7:00 PM</span></div>
+      </div>
+      <div class="hours-cta reveal">
+        <h3 class="italic">Book any time of night.</h3>
+        <p>Fresha shows the live schedule. Pick a slot, get a confirmation text, and forget about the phone tag. Cancellations are easy in the app.</p>
+        <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="btn-primary" style="animation:none">Book on Fresha &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit-section" id="visit">
+  <div class="container">
+    <div class="visit-grid reveal">
+      <div class="visit-info">
+        <span class="section-eyebrow">Stop in</span>
+        <h2>Front Street, Newark.</h2>
+        <div class="info-row">
+          <div class="info-icon">A</div>
+          <div class="info-text"><strong>Address</strong><span>2 E Front St, Unit A<br>Newark, IL 60541</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">P</div>
+          <div class="info-text"><strong>Phone</strong><a href="tel:8157865225">(815) 786-5225</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">B</div>
+          <div class="info-text"><strong>Book online</strong><a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2" target="_blank" rel="noopener">Fresha &mdash; The Salon</a></div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=2+E+Front+St+Newark+IL+60541&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of The Salon Newark"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <span class="section-eyebrow">Ready when you are</span>
+      <h2>Pick a time. We'll <span class="italic">handle the rest.</span></h2>
+      <p>Free consultations on color &mdash; bring a photo or three and we'll talk through what'll actually work for your hair.</p>
+      <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="btn-primary">Book Now &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo"><span class="logo-mark">S</span>The Salon</a>
+        <p>A one-chair boutique studio in downtown Newark. Hair you actually want to show off.</p>
+        <div class="footer-socials">
+          <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2" target="_blank" rel="noopener" aria-label="Fresha"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services &amp; Pricing</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="#visit">Map &amp; Directions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon 4&ndash;9pm</li>
+          <li>Tue &mdash; Closed</li>
+          <li>Wed 11:30am&ndash;6pm</li>
+          <li>Thu 11:30am&ndash;9pm</li>
+          <li>Sat 11am&ndash;6pm</li>
+          <li>Sun 11am&ndash;7pm</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="tel:8157865225">(815) 786-5225</a></li>
+          <li>2 E Front St, Unit A</li>
+          <li>Newark, IL 60541</li>
+        </ul>
+        <a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1rem;font-size:.88rem;padding:.65rem 1.2rem;animation:none">Book Now</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Salon, Newark IL. All rights reserved.</span>
+      <span>Website by <a href="https://johnathon-builds.vercel.app" target="_blank" rel="noopener">Johnathon Builds</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://www.fresha.com/a/the-salon-newark-2-e-front-st-wdbyetd2/booking?entryPoint=book_now_link" target="_blank" rel="noopener" class="sticky-cta">Book Now on Fresha</a>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>80)});
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
