@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-salon-newark.vercel.app/sitemap.xml
